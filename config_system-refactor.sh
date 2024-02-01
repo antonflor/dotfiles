@@ -41,15 +41,29 @@ while read -r alias_line; do
     fi
 done < "aliases.sh"
 
+# Load packages from the packages file
+if [ -f packages.txt ]; then
+    packages_to_install=$(cat packages.txt)
+else
+    echo "Packages file 'packages.txt' not found. No additional packages to install."
+fi
+
+# List packages to be installed
+if [ -n "$packages_to_install" ]; then
+    echo "Packages to be installed: $packages_to_install"
+else
+    echo "No additional packages to install."
+fi
+
 # Prompt to install additional packages
-read -p "Do you want to install additional packages? [Y/n] " response
+read -p "Do you want to install these additional packages? [Y/n] " response
 if [[ "$response" =~ ^[Yy]$ ]] || [ -z "$response" ]; then
-    # Load packages from the packages file and install them
-    if [ -f packages.txt ]; then
-        sudo apt-get install -y $(cat packages.txt)
+    if [ -n "$packages_to_install" ]; then
+        # Install packages
+        sudo apt-get install -y $packages_to_install
         echo "Additional packages installed."
     else
-        echo "Packages file 'packages.txt' not found. No additional packages installed."
+        echo "No additional packages to install."
     fi
 else
     echo "Skipping the installation of additional packages."
