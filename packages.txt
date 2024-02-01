@@ -7,3 +7,15 @@ iperf
 git
 python3
 tmux
+nmap
+tcpdump
+netcat
+iproute2
+iftop
+iperf
+ngrep
+snmpd
+net-tools
+dnsutils
+socat
+traceroute
