@@ -1,0 +1,9 @@
+wget
+htop
+vnstat
+iotop
+socat
+iperf
+git
+python3
+tmux
