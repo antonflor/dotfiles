@@ -18,6 +18,7 @@ alias mv='mv -i'
 # Git Aliases
 alias g='git'
 alias gs='git status'
+alias gup='git pull'
 alias ga='git add'
 alias gc='git commit'
 alias gd='git diff'
