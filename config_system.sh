@@ -48,7 +48,7 @@ fi
 (cd /tmp && ([[ -d sexy-bash-prompt ]] || git clone --depth 1 --config core.autocrlf=false https://github.com/twolfson/sexy-bash-prompt) && cd sexy-bash-prompt && make install) && source ~/.bashrc
 
 
-# Reload the shell
+# Reload the shell (reload again to double check)
 source ~/.bashrc
 
 # Confirmation messages
