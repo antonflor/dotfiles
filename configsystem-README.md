@@ -1,34 +1,75 @@
-# Configuration System Script
+# Dotfiles Repository
+
+This repository contains my personal dotfiles and various configuration files for my Linux system.
 
 ## Overview
 
-This script is designed to configure your Linux system by adding aliases, customizing your prompt, and installing additional packages if desired. It also creates a "Scripts" folder in your home directory if it doesn't exist.
-
-## Files
-
-- `config_system.sh`: The main script that performs the system configuration.
-- `aliases.sh`: A file containing custom aliases that you want to add to your shell configuration.
-- `packages.txt`: A file listing additional packages that you want to install on your system.
+Dotfiles are configuration files that customize the behavior and appearance of various command-line tools and applications. This repository helps me keep track of my custom settings and preferences across different systems.
 
 ## Usage
 
-1. Place the `config_system.sh` script along with `aliases.sh` and `packages.txt` in a directory of your choice.
-2. Open the `aliases.sh` file and add your custom aliases, following the provided format.
-3. Open the `packages.txt` file and list additional packages you want to install, one package per line.
+### Installation
 
-## Running the Script
+To use these dotfiles on a new system, follow these steps:
 
-1. Open a terminal and navigate to the directory containing the script and associated files.
-2. Run the script using the following command: ./config_system.sh
-3. Follow the on-screen prompts to configure your system.
+1. Clone this repository to your home directory:
+
+```
+git clone https://github.com/your-username/dotfiles.git ~/.dotfiles   
+```
+
+1. Navigate to the repository directory:
+
+   ```
+   cd ~/.dotfiles
+   ```
+
+2. Run the configuration script to set up your environment:
+
+   ```
+   ./config_system.sh
+   ```
+
+3. Follow the on-screen prompts to install additional packages and configure your system.
+
+4. After the script finishes, your custom settings, aliases, and packages will be added to your `~/.bashrc` file.
+
+5. Reload your shell to apply the changes:
+
+   ```
+   source ~/.bashrc
+   ```
+
+6. Enjoy your customized environment!
+
+### Sexy Bash Prompt
+
+This repository also includes a customized bash prompt using the "sexy-bash-prompt" from https://github.com/twolfson/sexy-bash-prompt.
+
+To install the "sexy-bash-prompt," follow these steps:
+
+1. Open your terminal.
+
+2. Run the following command to install "sexy-bash-prompt" (requires `git` and `make`):
+
+   ```
+   (cd /tmp && ([[ -d sexy-bash-prompt ]] || git clone --depth 1 --config core.autocrlf=false https://github.com/twolfson/sexy-bash-prompt) && cd sexy-bash-prompt && make install) && source ~/.bashrc
+   ```
+
+3. The "sexy-bash-prompt" will be installed and automatically sourced in your `~/.bashrc` file.
+
+4. Reload your shell to apply the changes:
+
+   ```
+   source ~/.bashrc
+   ```
+
+5. You now have a stylish and customizable bash prompt!
 
 ## Customization
 
-- You can modify the `aliases.sh` file to include your own aliases, which will be added to your shell configuration.
-- Customize the appearance of your shell prompt by modifying the `PS1` variable in the `config_system.sh` script.
+Feel free to modify the dotfiles and configuration files to suit your preferences. You can add your own aliases, environment variables, and other customizations.
 
-## Notes
+## Credits
 
-- This script is designed for Debian-based Linux distributions. If you're using a different distribution, you may need to adjust package management commands accordingly.
-
-Feel free to modify and enhance this script according to your specific needs. Enjoy your customized Linux environment!
+The "sexy-bash-prompt" is created by [twolfson](https://github.com/twolfson).
