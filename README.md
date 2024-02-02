@@ -1,5 +1,5 @@
 
-# Antonflor's Dotfiles
+# Dotfiles
 
 ## Introduction
 This repository contains my personal setup scripts and configurations. It's designed to install some of my favorite packages, customize the bash prompt, and set up my aliases, enhancing my Unix-like environment.
