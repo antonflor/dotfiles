@@ -45,7 +45,7 @@ read -p "Do you want to install these additional packages? [Y/n] " response
 if [[ "$response" =~ ^[Yy]$ ]] || [ -z "$response" ]; then
     if [ -n "$packages_to_install" ]; then
         # Install packages
-        sudo apt-get install -y $packages_to_install
+        sudo apt-get update && sudo apt-get install -y $packages_to_install
         echo "Additional packages installed."
     else
         echo "No additional packages to install."
@@ -54,14 +54,15 @@ else
     echo "Skipping the installation of additional packages."
 fi
 
-# Wait for 50 seconds
+# Wait for 5 seconds
 echo "Waiting for 5 seconds..."
 sleep 5
+
 
 # Install sexy-bash-prompt from GitHub
 (cd /tmp && ([[ -d sexy-bash-prompt ]] || git clone --depth 1 --config core.autocrlf=false https://github.com/twolfson/sexy-bash-prompt) && cd sexy-bash-prompt && make install) && source ~/.bashrc
 
-# Wait for 50 seconds
+# Wait for 5 seconds
 echo "Waiting for 5 seconds..."
 sleep 5
 
