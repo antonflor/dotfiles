@@ -9,6 +9,7 @@ alias ...='cd ../..'
 alias home='cd ~'
 alias docs='cd ~/Documents'
 alias scripts='cd ~/Scripts'  # Alias for the "Scripts" folder
+alias zerokb='find . -maxdepth 1 -type f -size 0'
 
 # Safety Measures
 alias rm='rm -i'
