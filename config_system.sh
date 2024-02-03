@@ -9,9 +9,19 @@ if [ ! -d "$SCRIPTS_DIR" ]; then
     mkdir -p "$SCRIPTS_DIR"
 fi
 
-# Load aliases from the aliases file
+# Path to .bash_aliases
+BASH_ALIASES="$HOME/.bash_aliases"
+
+# Check if aliases.sh exists
 if [ -f aliases.sh ]; then
-    source aliases.sh
+    # Check if .bash_aliases exists, create if not
+    if [ ! -f "$BASH_ALIASES" ]; then
+        touch "$BASH_ALIASES"
+    fi
+
+    # Append contents of aliases.sh to .bash_aliases
+    cat aliases.sh >> "$BASH_ALIASES"
+    echo "Aliases from aliases.sh appended to .bash_aliases."
 else
     echo "Aliases file 'aliases.sh' not found."
 fi
@@ -44,17 +54,19 @@ else
     echo "Skipping the installation of additional packages."
 fi
 
+# Wait for 50 seconds
+echo "Waiting for 5 seconds..."
+sleep 5
+
 # Install sexy-bash-prompt from GitHub
 (cd /tmp && ([[ -d sexy-bash-prompt ]] || git clone --depth 1 --config core.autocrlf=false https://github.com/twolfson/sexy-bash-prompt) && cd sexy-bash-prompt && make install) && source ~/.bashrc
 
-# Wait for 20 seconds
-echo "Waiting for 30 seconds..."
-sleep 30
+# Wait for 50 seconds
+echo "Waiting for 5 seconds..."
+sleep 5
 
 # Reload the shell (reload again to double check)
 source ~/.bashrc
 
 # Confirmation messages
-echo "Aliases and other configurations have been added to ~/.bashrc."
-echo "The 'Scripts' folder has been created (if necessary)."
-echo "sexy-bash-prompt has been installed and the shell has been reloaded."
+echo "Completed Modifications, Please Logout and Log back in"
