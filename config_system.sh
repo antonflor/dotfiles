@@ -47,6 +47,9 @@ fi
 # Install sexy-bash-prompt from GitHub
 (cd /tmp && ([[ -d sexy-bash-prompt ]] || git clone --depth 1 --config core.autocrlf=false https://github.com/twolfson/sexy-bash-prompt) && cd sexy-bash-prompt && make install) && source ~/.bashrc
 
+# Wait for 20 seconds
+echo "Waiting for 30 seconds..."
+sleep 30
 
 # Reload the shell (reload again to double check)
 source ~/.bashrc
