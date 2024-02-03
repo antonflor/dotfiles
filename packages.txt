@@ -9,7 +9,7 @@ python3
 tmux
 nmap
 tcpdump
-netcat
+netcat-traditional
 iproute2
 iftop
 iperf
