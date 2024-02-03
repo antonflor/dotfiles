@@ -54,17 +54,28 @@ else
     echo "Skipping the installation of additional packages."
 fi
 
+# Separator before waiting
+echo "=================================================="
+
 # Wait for 5 seconds
 echo "Waiting for 5 seconds..."
 sleep 5
 
+# Separator after waiting
+echo "=================================================="
 
 # Install sexy-bash-prompt from GitHub
 (cd /tmp && ([[ -d sexy-bash-prompt ]] || git clone --depth 1 --config core.autocrlf=false https://github.com/twolfson/sexy-bash-prompt) && cd sexy-bash-prompt && make install) && source ~/.bashrc
 
+# Separator before waiting
+echo "=================================================="
+
 # Wait for 5 seconds
 echo "Waiting for 5 seconds..."
 sleep 5
+
+# Separator after waiting
+echo "=================================================="
 
 # Reload the shell (reload again to double check)
 source ~/.bashrc
