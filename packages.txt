@@ -21,3 +21,4 @@ socat
 traceroute
 make
 arp-scan
+curl
